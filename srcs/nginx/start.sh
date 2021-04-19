@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 
 # We start the SSH deamon, Telegraf and nginx
 /usr/sbin/sshd

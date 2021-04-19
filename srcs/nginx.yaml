@@ -5,18 +5,23 @@ metadata:
   labels:
     app: nginx
 spec:
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 192.168.65.14
   selector:
     app: nginx
   ports:
   - port: 80
     name: http
+    protocol: TCP
+    targetPort: 80
   - port: 443
     name: https
-  - port: 22
-    nodePort: 22
-    targetPort: 22
+    protocol: TCP
+    targetPort: 443
+  - port: 30022
     name: ssh
+    protocol: TCP
+    targetPort: 22
 
 ---
 
@@ -27,7 +32,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -38,5 +43,5 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: service_nginx
+        image: nginx
         imagePullPolicy: Never
