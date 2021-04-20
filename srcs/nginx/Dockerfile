@@ -34,13 +34,13 @@ RUN mkdir -p /etc/telegraf
 COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 # We customize the SSH welcome message
-RUN echo 'SSH of ft_services by tmarx' > /etc/motd
+RUN echo 'SSH of ft_services by scilla' > /etc/motd
 
 # Here we go
 COPY start.sh ./start.sh
 RUN chmod +x /start.sh
 EXPOSE 80
 EXPOSE 443
-EXPOSE 22
+#EXPOSE 22
 
-CMD ["/bin/ash","./start.sh"]
+CMD sh ./start.sh
