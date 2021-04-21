@@ -39,3 +39,11 @@ spec:
     name: ftps
     protocol: TCP
     targetPort: 21
+  - port: 30021
+    name: ftpsside1
+    protocol: TCP
+    targetPort: 30021
+  - port: 30020
+    name: ftpsside2
+    protocol: TCP
+    targetPort: 30020

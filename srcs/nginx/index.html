@@ -3,17 +3,27 @@
   <head>
     <meta charset="utf-8">
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        cursor: none;
-      }
+      #vantajs {
+  width: auto; height: auto; margin-bottom: 10px;
+}
     </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <title>eh?</title>
   </head>
-  <body></body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-  <script src="./script.js"></script>
+  <body><div id="content"></div></body>
+<script>
+VANTA.BIRDS({
+  el: "body",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+</script>
 </html>
